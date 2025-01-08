@@ -1,21 +1,167 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes pulsate {
+  0% {
+    background-size: 100%;
+  }
+  50% {
+    background-size: 150%;
+  }
+  100% {
+    background-size: 100%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --primary: #c06ce9;
+  --secondary: #fff;
+  --background: #f4f7fa;
+  --grey: #9a9a9a;
+  --secondary-tet: #aaa;
+  --primary-gradient: linear-gradient(118.19deg, #c06ce9 4.84%, #673bb3 100%);
+  --max-container-width: 1440px;
+  --DataGrid-headersTotalHeight: 50px !important;
+}
+
+.MuiButton-root {
+  text-transform: capitalize !important;
+}
+.text-gradient {
+  background: var(--primary-gradient);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  display: inline-block;
+  font-weight: 700;
+}
+.text-primary {
+  color: var(--primary);
+}
+.text {
+  color: var(--secondary-tet);
+  font-weight: 300 !important;
+}
+a {
+  color: "#fff";
+  font-weight: 500;
+}
+.shadow {
+  box-shadow: 0 5px 40px #0001;
+}
+.shadow-small {
+  box-shadow: 0 5px 15px #0001;
+}
+.border {
+  border: 1px solid #e4e7ec;
+}
+.raise-on-hover {
+  transition: 0.3s ease-in-out;
+}
+.raise-on-hover:hover {
+  transform: translateY(-15px);
+}
+
+.icon-bg {
+  background: #ffece5;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+}
+.flex-column {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section {
+  padding: 5vh 25px;
+}
+/* CSS to add to your stylesheet */
+.animated-container:hover {
+  transform: scale(1.05) rotate(5deg);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.header-text {
+  font-weight: 600 !important;
+  font-size: 36px !important;
+  line-height: 1.4;
+}
+
+.section-header-text {
+  font-weight: 500 !important;
+  font-size: 28px !important;
+  line-height: 1.4 !important;
+}
+
+.MuiDataGrid-cell,
+.MuiDataGrid-columnHeader {
+  padding: 0 20px !important;
+}
+.MuiDialog-paper {
+  border-radius: 15px !important;
+}
+.section {
+  padding: 5vh 15px;
+}
+@media (min-width: 720px) {
+  .section {
+    padding: 5vh 35px;
+    position: relative;
+  }
+  .section-inner {
+    max-width: var(--max-container-width);
+    margin: 0 auto;
+  }
+  .header-text {
+    font-size: 56px !important;
+  }
+  .section-header-text {
+    font-size: 48px !important;
+  }
+}
+
+@media (min-width: 1360px) {
+  .header-text {
+    font-size: 72px !important;
+  }
+}
+
+@media (min-width: 1360px) {
+  .header-text {
+    font-size: 64px !important;
+  }
+}
+a:hover {
+  color: var(--primary);
 }
